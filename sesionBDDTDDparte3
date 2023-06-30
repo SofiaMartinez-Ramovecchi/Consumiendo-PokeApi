@@ -1,0 +1,26 @@
+Puertos y adaptadores:
+
+El adaptador: agente
+Book Service consume una API externa
+Necesitamos una librería, una dependencia, que es request
+
+Para provar el servicio nos obliga a emular la dependencia
+Haciendo un mock, falcear una librería, si queres cambiar la librería hay que cambiar el test
+
+find_book(string)
+
+IAdapter
+find_book(string)
+
+BookApiService(IAdapter)
+FakeBookApiService(IAdapter)
+
+Hacer test con api rest real, es muy lento
+TestComponent Datos falsos.
+
+Puertos y adaptadores es asi:
+Hay en el core de la app, el modelo de dominio
+Luego alejandose del core hay servicios, que brindan servicios de cosas externas a la logica del negocio, pueden ser APIREST, APIGRPC, GraphQL, InterfazGrafica, PacketS3, MongoDB, etc.
+Entonces esos servicios del exterior se comunican a travez de adaptadores, que son las interfaces, con el servicio, por medio de su puerto, que es el agente.
+
+
